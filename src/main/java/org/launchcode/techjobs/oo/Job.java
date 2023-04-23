@@ -20,6 +20,11 @@ public class Job {
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
         this();
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
 
 //    @Override
@@ -29,6 +34,71 @@ public class Job {
 //        Job job = (Job) o;
 //        return id == job.id;
 //    }
+
+
+    @Override
+    public String toString() {
+        String output;
+        output = "\n" +
+                "ID: " + this.id +"\n" +
+                "Name: ";
+
+        if (this.name == ""){
+            output += "Data not available" + "\n";
+        } else{
+            output += this.name + "\n";
+        }
+
+        output += "Employer: ";
+
+        if (this.employer.getValue() == ""){
+            output += "Data not available" + "\n";
+        } else{
+            output += this.employer.getValue() + "\n";
+        }
+
+        output += "Location: ";
+
+        if (this.location.getValue() == ""){
+            output += "Data not available" + "\n";
+        } else{
+            output += this.location.getValue() + "\n";
+        }
+
+        output += "Position Type: ";
+
+        if (this.positionType.getValue() == ""){
+            output += "Data not available" + "\n";
+        } else{
+            output += this.positionType.getValue() + "\n";
+        }
+
+        output += "Core Competency: ";
+
+        if (this.coreCompetency.getValue() == ""){
+            output += "Data not available" + "\n";
+        } else{
+            output += this.coreCompetency.getValue() + "\n";
+        }
+
+        return output;
+
+//        return "\n" +
+//                "ID: " + this.id +"\n" +
+//                "Name: " + this.name + "\n" +
+//                "Employer: " + this.employer.getValue() + "\n" +
+//                "Location: " + this.location.getValue() + "\n" +
+//                "Position Type: " + this.positionType.getValue() + "\n" +
+//                "Core Competency: " + this.coreCompetency.getValue() + "\n";
+//        return "Job{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", employer=" + employer +
+//                ", location=" + location +
+//                ", positionType=" + positionType +
+//                ", coreCompetency=" + coreCompetency +
+//                '}';
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -86,6 +156,7 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
